@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Foods to Try in Vietnam</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Foods You Should Try When Visiting Vietnam</h1>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>About This Page</h2>
+            <p>
+                Vietnam has many delicious foods. Some dishes are simple, but they
+                are very popular with local people and tourists. This page shares
+                a few foods that I think visitors should try.
+            </p>
+        </section>
+
+        <section>
+            <h2>My Recommended Foods</h2>
+            <ul>
+                <li>Pho</li>
+                <li>Banh mi</li>
+                <li>Goi cuon</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Food Photos</h2>
+
+            <img src="pho.jpg" alt="A bowl of Vietnamese pho with herbs" width="250">
+
+            <img src="banhmi.jpg" alt="Vietnamese banh mi sandwich" width="250">
+
+            <img src="goicuon.jpg" alt="Vietnamese fresh spring rolls" width="250">
+        </section>
+
+        <section>
+            <h2>More Information</h2>
+            <p>
+                You can learn more about Vietnamese cuisine on
+                <a href="https://en.wikipedia.org/wiki/Vietnamese_cuisine" target="_blank">
+                    Wikipedia
+                </a>.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Created for my HTML final project.</p>
+    </footer>
+
+<script>
+    const coursera_getParentTargetDomain = function() {
+      if (location.ancestorOrigins && location.ancestorOrigins[0]) {
+        return location.ancestorOrigins[0];
+      }
+      return "https://www.coursera.org";
+    };
+    </script>
+<script>
+    if (window.parent !== window) {
+      (function() {
+        var historyWrapper = function(functionType) {
+          var whichFunc = history[functionType];
+          return function() {
+            var response = whichFunc.apply(this, arguments);
+            var eventRes = new Event(functionType);
+            eventRes.arguments = arguments;
+            window.dispatchEvent(eventRes);
+            return response;
+          };
+        };
+        history.pushState = historyWrapper("pushState");
+        history.replaceState = historyWrapper("replaceState");
+        const sendInnerFrameUrl = function() {
+          window.parent.postMessage({'innerFrameUrl': window.location.href, 'fromInnerFrame': true}, coursera_getParentTargetDomain());
+        };
+        window.addEventListener("pushState",    sendInnerFrameUrl);
+        window.addEventListener("replaceState", sendInnerFrameUrl);
+        window.addEventListener("popstate",     sendInnerFrameUrl);
+        window.addEventListener("hashchange",   sendInnerFrameUrl);
+      })();
+    }
+    </script>
+<script>
+    if (window.parent !== window) {
+      window.parent.postMessage({'innerFrameUrl': window.location.href, 'fromInnerFrame': true}, coursera_getParentTargetDomain());
+    }
+    </script>
+<script>
+    if (window.parent !== window) {
+      (function() {
+        function throttle(callback, limit) {
+          var waiting = false;                      // Initially, we're not waiting
+          return function () {                      // We return a throttled function
+            if (!waiting) {                         // If we're not waiting
+              callback.apply(this, arguments);      // Execute users function
+              waiting = true;                       // Prevent future invocations
+              setTimeout(function () {              // After a period of time
+                  waiting = false;                  // And allow future invocations
+              }, limit);
+            }
+          }
+        }
+
+        const notify = (userActionType) => {
+          window.parent.postMessage({'isActive': true, 'fromInnerFrame': true, 'userActionType': userActionType}, coursera_getParentTargetDomain());
+        };
+
+        const throttledNotifyKeyPress = throttle(() => notify('key_press'), 10000);
+        const throttledNotifyMouseMovement = throttle(() => notify('mouse_movement'), 10000);
+        const throttledNotifyClick = throttle(() => notify('key_press'), 10000);
+
+        window.addEventListener('keydown', throttledNotifyKeyPress);
+        window.addEventListener('mousemove', throttledNotifyMouseMovement);
+        window.addEventListener('click', throttledNotifyClick);
+      })();
+    }
+    </script></body>
+
+</html>
