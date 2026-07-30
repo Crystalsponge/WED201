@@ -1,0 +1,37 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #4caf50;
+}
+
+nav {
+  background-color: #81c784;
+}
+
+main {
+  background-color: white;
+  font-size: 20px;
+}
+
+footer {
+  background-color: #4caf50;
+}
+
+li {
+  display: inline-block;
+  width: 150px;
+}
+
+h1 {
+  text-align: center;
+  font-family: Georgia, serif;
+  color: white;
+}
+
+p {
+  line-height: 1.6;
+}
