@@ -6,7 +6,7 @@ body {
 
 .skip {
   position: absolute;
-  left: -999px;
+  left: 0px;
   top: 10px;
   background-color: white;
   color: black;
