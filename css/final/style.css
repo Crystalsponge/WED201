@@ -1,0 +1,437 @@
+/* =============================================
+   IMPORTS & RESET
+   ============================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --navy:   #0F1B2D;
+  --navy2:  #162338;
+  --teal:   #00C9A7;
+  --teal-dim: #009e83;
+  --white:  #F0F4F8;
+  --slate:  #7B8FA6;
+  --card-bg:#1A2B40;
+  --radius: 12px;
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --transition: 0.3s ease;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--navy);
+  color: var(--white);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* =============================================
+   REQUIREMENT 1 — Skip to Main Content
+   Uses position + focus pseudo-class
+   ============================================= */
+.skip-link {
+  position: absolute;
+  top: -60px;           /* hidden off-screen */
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--teal);
+  color: var(--navy);
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 0 0 var(--radius) var(--radius);
+  text-decoration: none;
+  z-index: 1000;
+  transition: top var(--transition);
+}
+
+.skip-link:focus {
+  top: 0;               /* slides into view on focus */
+  outline: 3px solid var(--white);
+  outline-offset: 2px;
+}
+
+/* =============================================
+   REQUIREMENT 2 — Navigation (3+ CSS props)
+   + REQUIREMENT 5 — Flex on nav
+   ============================================= */
+header {
+  background: rgba(15, 27, 45, 0.92);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(0, 201, 167, 0.15);
+}
+
+nav {
+  display: flex;                    /* FLEX on nav */
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--teal);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+}
+
+/* REQUIREMENT 2 — nav link styling (color, padding, transition, border-bottom) */
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition), border-bottom-color var(--transition), background var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--teal);
+  border-bottom-color: var(--teal);
+  background: rgba(0, 201, 167, 0.07);
+}
+
+/* =============================================
+   REQUIREMENT 3 — Images: box model
+   border, padding, border-radius on ALL images
+   ============================================= */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+
+  /* Box model */
+  padding: 6px;
+  border: 2px solid rgba(0, 201, 167, 0.35);
+  border-radius: var(--radius);
+
+  background: var(--card-bg);       /* padding area color */
+  object-fit: cover;
+}
+
+/* =============================================
+   REQUIREMENT 6 — Hover pseudo-class (transition)
+   ============================================= */
+img:hover {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 4px rgba(0, 201, 167, 0.2),
+              0 8px 28px rgba(0, 0, 0, 0.4);
+  transform: translateY(-4px) scale(1.02);
+  transition: transform 0.35s cubic-bezier(.22,.68,0,1.2),
+              box-shadow 0.35s ease,
+              border-color 0.25s ease;
+}
+
+img {
+  transition: transform 0.35s ease,
+              box-shadow 0.35s ease,
+              border-color 0.25s ease;
+}
+
+/* =============================================
+   SHARED LAYOUT UTILITIES
+   ============================================= */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 72px 0;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 32px; }
+h3 { font-size: 1.1rem; }
+
+p { color: var(--slate); line-height: 1.75; }
+
+.teal { color: var(--teal); }
+
+/* Section label eyebrow */
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 12px;
+}
+
+/* =============================================
+   INDEX PAGE — Hero
+   ============================================= */
+.hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 80% 40%,
+              rgba(0,201,167,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.hero-text { flex: 1; min-width: 280px; }
+.hero-text p { margin: 20px 0 36px; font-size: 1.05rem; max-width: 480px; }
+
+.hero-image-wrap { flex: 1; min-width: 260px; }
+.hero-image-wrap img {
+  width: 100%;
+  max-width: 460px;
+  height: 320px;
+  border-radius: 20px;
+  padding: 8px;
+  border-width: 2px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background var(--transition), transform 0.2s;
+  cursor: pointer;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn-primary {
+  background: var(--teal);
+  color: var(--navy);
+}
+
+.btn-primary:hover { background: var(--teal-dim); }
+
+.btn-outline {
+  border: 2px solid var(--teal);
+  color: var(--teal);
+  margin-left: 12px;
+}
+
+.btn-outline:hover { background: rgba(0,201,167,0.1); }
+
+/* Features row (flex) */
+.features {
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.features-grid {
+  display: flex;                    /* FLEX: features row */
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  flex: 1;
+  min-width: 220px;
+  background: var(--card-bg);
+  border: 1px solid rgba(0,201,167,0.12);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: border-color var(--transition), transform 0.3s;
+}
+
+.feature-card:hover {
+  border-color: var(--teal);
+  transform: translateY(-4px);
+}
+
+.feature-card img {
+  width: 100%;
+  height: 160px;
+  margin-bottom: 16px;
+}
+
+.feature-card h3 { margin-bottom: 8px; }
+
+/* =============================================
+   GALLERY PAGE — Grid + nth-child
+   REQUIREMENT 4 — Grid (2+ columns)
+   REQUIREMENT 7 — nth-child selector
+   ============================================= */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 240px;
+  padding: 0;          /* override default padding for tighter gallery */
+  border-radius: var(--radius);
+}
+
+/* REQUIREMENT 7 — nth-child: alternate border-radius */
+.gallery-item:nth-child(odd) img {
+  border-radius: var(--radius) 0 var(--radius) 0;
+}
+
+.gallery-item:nth-child(even) img {
+  border-radius: 0 var(--radius) 0 var(--radius);
+}
+
+/* nth-child: every 3rd item spans two columns on wider screens */
+@media (min-width: 700px) {
+  .gallery-item:nth-child(3n) {
+    grid-column: span 2;
+  }
+  .gallery-item:nth-child(3n) img {
+    height: 300px;
+  }
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(15,27,45,0.9));
+  padding: 32px 16px 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption { opacity: 1; }
+
+.gallery-caption p {
+  color: var(--white);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* =============================================
+   ABOUT PAGE
+   ============================================= */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+@media (max-width: 700px) {
+  .about-layout { grid-template-columns: 1fr; }
+}
+
+.about-photo img {
+  width: 100%;
+  border-radius: 20px;
+  height: 420px;
+}
+
+.about-text h2 { margin-bottom: 20px; }
+.about-text p  { margin-bottom: 16px; }
+
+/* Skills tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.tag {
+  background: rgba(0,201,167,0.1);
+  border: 1px solid rgba(0,201,167,0.3);
+  color: var(--teal);
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+/* Contact strip */
+.contact-strip {
+  background: var(--card-bg);
+  border: 1px solid rgba(0,201,167,0.15);
+  border-radius: var(--radius);
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.contact-strip h2 { margin-bottom: 8px; }
+.contact-strip p  { margin: 0; }
+
+/* =============================================
+   FOOTER
+   ============================================= */
+footer {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding: 28px 0;
+  text-align: center;
+  color: var(--slate);
+  font-size: 0.85rem;
+}
+
+footer a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 600px) {
+  .hero-inner { flex-direction: column; }
+  .hero-image-wrap { order: -1; }
+  .features-grid { flex-direction: column; }
+  .contact-strip { flex-direction: column; text-align: center; }
+  nav { flex-wrap: wrap; height: auto; padding: 12px 16px; gap: 8px; }
+}

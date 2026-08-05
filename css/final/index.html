@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio — Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- REQUIREMENT 1: Skip link — hidden by default, visible on :focus via position:absolute + top offset -->
+  <a href="#main" class="skip-link">Skip to Main Content</a>
+
+  <header>
+    <nav>
+      <a href="index.html" class="nav-logo">Anh Kiet</a>
+      <!-- REQUIREMENT 2: Nav styled with 3+ CSS properties (flex, color, border-bottom, padding, transition) -->
+      <!-- REQUIREMENT 5: Flex applied to nav and .nav-links -->
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO — flex layout -->
+    <section class="hero container">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">Welcome</p>
+          <h1>Hi, I'm <span class="teal">Luu Hoang Anh Kiet</span>.<br/>I build things.</h1>
+          <p>
+            Computer Science student passionate about software, networks, and
+            turning ideas into clean, working code. This site is a small window
+            into what I've been making.
+          </p>
+          <a href="gallery.html" class="btn btn-primary">See My Work</a>
+          <a href="about.html"   class="btn btn-outline">About Me</a>
+        </div>
+
+        <div class="hero-image-wrap">
+          <!-- REQUIREMENT 3: box model — border, padding, border-radius applied via CSS -->
+          <!-- Replace src with your own image -->
+          <img
+            src="images/backend.png"
+            alt="Backend"
+            width="460"
+            height="320"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES — flex row with images -->
+    <section class="features">
+      <div class="container">
+        <p class="eyebrow">What I Do</p>
+        <h2>Areas of Focus</h2>
+
+        <!-- REQUIREMENT 5: Flex on .features-grid -->
+        <div class="features-grid">
+          <div class="feature-card">
+            <!-- REQUIREMENT 3: image box model styling -->
+            <!-- REQUIREMENT 6: img:hover triggers transform + box-shadow transition -->
+            <img
+              src="https://placehold.co/400x160/1A2B40/00C9A7?text=Software+Dev"
+              alt="Software development illustration"
+              width="400"
+              height="160"
+            />
+            <h3>Software Development</h3>
+            <p>OOP, data structures, algorithms — building well-structured programs in Java, C, and Python.</p>
+          </div>
+
+          <div class="feature-card">
+            <img
+              src="https://placehold.co/400x160/1A2B40/00C9A7?text=Networking"
+              alt="Networking and infrastructure illustration"
+              width="400"
+              height="160"
+            />
+            <h3>Networking</h3>
+            <p>Subnetting, routing protocols, and configuring devices with IOS CLI through Cisco coursework.</p>
+          </div>
+
+          <div class="feature-card">
+            <img
+              src="https://placehold.co/400x160/1A2B40/00C9A7?text=Web+Dev"
+              alt="Web development illustration"
+              width="400"
+              height="160"
+            />
+            <h3>Web Development</h3>
+            <p>Building accessible, responsive front-ends with HTML, CSS Grid, Flexbox, and semantic markup.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 <a href="about.html">Luu Hoang Anh Kiet</a>. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

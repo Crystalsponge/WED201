@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio — About</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- REQUIREMENT 1: Skip link -->
+  <a href="#main" class="skip-link">Skip to Main Content</a>
+
+  <header>
+    <nav>
+      <a href="index.html" class="nav-logo">Anh Kiet</a>
+      <!-- REQUIREMENT 2: Styled navigation -->
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- About layout — grid (2 columns) -->
+    <section>
+      <div class="container">
+        <p class="eyebrow">Get to Know Me</p>
+
+        <!-- REQUIREMENT 4: CSS Grid — 2 columns -->
+        <div class="about-layout">
+
+          <div class="about-photo">
+            <!-- REQUIREMENT 3: box model — border, padding, border-radius -->
+            <!-- REQUIREMENT 6: img:hover — transform + box-shadow -->
+            <img
+              src="images/avatar.png"
+              alt="Not me"
+              width="500"
+              height="420"
+            />
+          </div>
+
+          <div class="about-text">
+            <h2>About <span class="teal">Me</span></h2>
+            <p>
+              I'm a Computer Science student with a focus on software engineering,
+              networking, and web development. I enjoy working through hard problems —
+              whether that's designing a class hierarchy in Java, subnetting a VLSM
+              topology, or getting a CSS layout to finally snap into place.
+            </p>
+            <p>
+              Outside of coursework I run a Minecraft server, explore algorithm
+              challenges, and mentor peers in data structures. I believe the best way
+              to learn something is to teach it.
+            </p>
+            <p>
+              I'm currently looking for opportunities to apply what I know and grow
+              into a developer who ships things that actually matter.
+            </p>
+
+            <!-- Skills tags (flex) -->
+            <div class="tags">
+              <span class="tag">Java</span>
+              <span class="tag">C / C++</span>
+              <span class="tag">Python</span>
+              <span class="tag">HTML / CSS</span>
+              <span class="tag">Git</span>
+              <span class="tag">Linux</span>
+              <span class="tag">Cisco IOS</span>
+              <span class="tag">OOP</span>
+              <span class="tag">Data Structures</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact strip -->
+    <section>
+      <div class="container">
+        <div class="contact-strip">
+          <div>
+            <h2>Let's Connect</h2>
+            <p>I'm always open to a conversation — feel free to reach out.</p>
+          </div>
+          <a href="mailto:kietluuhoanganh@gmail.com" class="btn btn-primary">Send an Email</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 <a href="about.html">Luu Hoang Anh Kiet</a>. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

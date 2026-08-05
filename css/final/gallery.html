@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio — Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- REQUIREMENT 1: Skip link -->
+  <a href="#main" class="skip-link">Skip to Main Content</a>
+
+  <header>
+    <nav>
+      <a href="index.html" class="nav-logo">Anh Kiet</a>
+      <!-- REQUIREMENT 2: Styled navigation -->
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section>
+      <div class="container">
+        <p class="eyebrow">Projects &amp; Moments</p>
+        <h2>Gallery</h2>
+
+        <!--
+          REQUIREMENT 4: CSS Grid — at least 2 columns (auto-fill, minmax(280px,1fr))
+          REQUIREMENT 7: nth-child — odd items get diagonal border-radius,
+                                      even items get the inverse;
+                                      every 3rd item spans 2 columns
+        -->
+        <div class="gallery-grid">
+
+          <!-- Item 1 (odd) — border-radius: top-left + bottom-right -->
+          <div class="gallery-item">
+            <!-- REQUIREMENT 3: box model via CSS — border, padding, border-radius -->
+            <!-- REQUIREMENT 6: img:hover — translateY + glow box-shadow + scale -->
+            <img
+              src="images/java.png"
+              alt="Java Developer"
+              width="600"
+              height="400"
+            />
+            <div class="gallery-caption"><p>Java Developer</p></div>
+          </div>
+
+          <!-- Item 2 (even) — border-radius: top-right + bottom-left -->
+          <div class="gallery-item">
+            <img
+              src="images/SudokuGame.png"
+              alt="First Project Sudoku Game"
+              width="600"
+              height="400"
+            />
+            <div class="gallery-caption"><p>First Java Project</p></div>
+          </div>
+
+          <!-- Item 3 (3n) — spans 2 columns, taller -->
+          <div class="gallery-item">
+            <img
+              src="images/amp.png"
+              alt="AMP"
+              width="900"
+              height="400"
+            />
+            <div class="gallery-caption"><p>Manages Cubecoder hosted minecraft server</p></div>
+          </div>
+
+          <!-- Item 4 (even) -->
+          <div class="gallery-item">
+            <img
+              src="images/minecraft.png"
+              alt="Project 4 screenshot"
+              width="600"
+              height="400"
+            />
+            <div class="gallery-caption"><p>Minecraft plugin/datapack/configurate</p></div>
+          </div>
+
+          <!-- Item 5 (odd) -->
+          <div class="gallery-item">
+            <img
+              src="images/c++.png"
+              alt="c++"
+              width="600"
+              height="400"
+            />
+            <div class="gallery-caption"><p>Familiar with c++</p></div>
+          </div>
+
+          <!-- Item 6 (3n, spans 2 cols) -->
+          <div class="gallery-item">
+            <img
+              src="images/csharp.png"
+              alt="c#"
+              width="900"
+              height="400"
+            />
+            <div class="gallery-caption"><p>Familiar with C#</p></div>
+          </div>
+
+        </div><!-- /.gallery-grid -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 <a href="about.html">Luu Hoang Anh Kiet</a>. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
