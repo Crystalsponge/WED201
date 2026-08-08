@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#image {
+    width: 600px;
+    height: 350px;
+    border: 2px solid black;
+    margin: 20px auto;
+    background-size: cover;
+    background-position: center;
+    line-height: 350px;
+    font-size: 22px;
+}
+
+.preview {
+    width: 180px;
+    height: 120px;
+    margin: 10px;
+    border: 2px solid black;
+}
+
+.preview:focus {
+    border: 4px solid blue;
+}

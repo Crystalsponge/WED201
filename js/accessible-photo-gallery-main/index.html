@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>accessible photo gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="addTabFocus()">
+
+    <h1>my accessible photo gallery</h1>
+
+    <div id="image">
+        hover over an image below to display here.
+    </div>
+
+    <img class="preview" src="photo1.jpg" alt="a small coffee shop"
+         onmouseover="upDate(this)" onmouseout="unDo()"
+         onfocus="upDate(this)" onblur="unDo()">
+
+    <img class="preview" src="photo2.jpg" alt="a quiet park"
+         onmouseover="upDate(this)" onmouseout="unDo()"
+         onfocus="upDate(this)" onblur="unDo()">
+
+    <img class="preview" src="photo3.jpg" alt="a street with trees"
+         onmouseover="upDate(this)" onmouseout="unDo()"
+         onfocus="upDate(this)" onblur="unDo()">
+
+    <img class="preview" src="photo4.jpg" alt="a simple restaurant"
+         onmouseover="upDate(this)" onmouseout="unDo()"
+         onfocus="upDate(this)" onblur="unDo()">
+
+    <img class="preview" src="photo5.jpg" alt="a sunset near the road"
+         onmouseover="upDate(this)" onmouseout="unDo()"
+         onfocus="upDate(this)" onblur="unDo()">
+
+    <img class="preview" src="photo6.jpg" alt="a table with drinks"
+         onmouseover="upDate(this)" onmouseout="unDo()"
+         onfocus="upDate(this)" onblur="unDo()">
+
+    <script src="script.js"></script>
+
+</body>
+</html>
