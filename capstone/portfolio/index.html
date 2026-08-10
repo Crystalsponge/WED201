@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luu Kiet — Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════
+       NAVIGATION (sticky)
+  ══════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="#hero" class="nav-logo" aria-label="Back to top">Kiet Page</a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Switch to light mode" title="Toggle theme">
+        <span class="theme-icon" aria-hidden="true">☀</span>
+      </button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#about"   class="nav-link">About</a></li>
+        <li><a href="#work"    class="nav-link">Work</a></li>
+        <li><a href="#skills"  class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ══════════════════════════════════
+         HERO
+    ══════════════════════════════════ -->
+    <section id="hero" class="hero" aria-label="Introduction">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Hello, world — I'm</p>
+        <h1 class="hero-name">Luu Kiet</h1>
+        <p class="hero-tagline"><span id="typing-target" aria-live="polite"></span><span class="cursor" aria-hidden="true">|</span></p>
+        <div class="hero-cta">
+          <a href="#work" class="btn btn-primary">View my work</a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        </div>
+        <div class="hero-meta" aria-label="Current status">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>SE2014 · Ho Chi Minh City, Vietnam</span>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="code-card">
+          <div class="code-card-bar">
+            <span></span><span></span><span></span>
+          </div>
+          <pre class="code-snippet"><code><span class="kw">class</span> <span class="cls">Developer</span> {
+  name    = <span class="str">"Luu Kiet"</span>;
+  stack   = [<span class="str">"Java"</span>, <span class="str">"C"</span>, <span class="str">"HTML/CSS"</span>];
+  courses = [<span class="str">"OOP"</span>, <span class="str">"OS"</span>, <span class="str">"CCNA"</span>];
+
+  <span class="fn">build</span>() {
+    <span class="kw">return</span> <span class="str">"something useful"</span>;
+  }
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         ABOUT
+    ══════════════════════════════════ -->
+    <section id="about" class="about section reveal" aria-labelledby="about-heading">
+      <div class="section-inner">
+        <div class="about-img-wrap">
+          <!-- EXTRA 3: image incorporated via figure/figcaption, with lazy loading -->
+          <figure>
+            <img
+              src="images/profile.jpg"
+              alt="Luu Kiet, computer science student"
+              class="about-img"
+              loading="lazy"
+              width="320"
+              height="320"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+            />
+            <!-- Fallback avatar shown if image missing -->
+            <div class="about-img-fallback" aria-hidden="true">LK</div>
+            <figcaption class="sr-only">Profile photo of Luu Kiet</figcaption>
+          </figure>
+        </div>
+        <div class="about-text">
+          <p class="section-eyebrow">About me</p>
+          <h2 id="about-heading">I write code. I break things. I fix them.</h2>
+          <p>I'm a software engineering student (class SE2014) at FPT University, Ho Chi Minh City. My coursework spans OOP, Operating Systems, CCNA networking, Discrete Math, and Data Structures — and I build real things on the side.</p>
+          <p>Outside of assignments I've configured Minecraft server quests in Java/Spigot, set up Linux environments with WSL2, and built automation tools. I prefer understanding how something works over just getting it to compile.</p>
+          <a href="#work" class="btn btn-outline">See my projects →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         SKILLS STRIP
+    ══════════════════════════════════ -->
+    <section id="skills" class="skills section reveal" aria-labelledby="skills-heading">
+      <div class="section-inner">
+        <p class="section-eyebrow">Tech &amp; tools</p>
+        <h2 id="skills-heading">What I work with</h2>
+        <div class="skills-grid" role="list">
+          <div class="skill-chip" role="listitem">Java</div>
+          <div class="skill-chip" role="listitem">C / C++</div>
+          <div class="skill-chip" role="listitem">Python</div>
+          <div class="skill-chip" role="listitem">HTML &amp; CSS</div>
+          <div class="skill-chip" role="listitem">JavaScript</div>
+          <div class="skill-chip" role="listitem">Git / GitHub</div>
+          <div class="skill-chip" role="listitem">Linux / WSL2</div>
+          <div class="skill-chip" role="listitem">Cisco / CCNA</div>
+          <div class="skill-chip" role="listitem">Packet Tracer</div>
+          <div class="skill-chip" role="listitem">Docker</div>
+          <div class="skill-chip" role="listitem">OOP &amp; Design Patterns</div>
+          <div class="skill-chip" role="listitem">Data Structures</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         WORK / PROJECTS — with CAROUSEL
+         EXTRA 1: Image Carousel (autoplay OFF)
+    ══════════════════════════════════ -->
+    <section id="work" class="work section reveal" aria-labelledby="work-heading">
+      <div class="section-inner">
+        <p class="section-eyebrow">Selected work</p>
+        <h2 id="work-heading">Projects</h2>
+
+        <!-- Filter buttons — EXTRA 2 (JS): filter cards by tag -->
+        <div class="filter-bar" role="group" aria-label="Filter projects by category">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="java">Java</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="systems">Systems</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+
+          <!-- Project 1 -->
+          <article class="project-card reveal-card" data-delay="0" data-tags="java" aria-label="Sales Management System project">
+            <div class="project-img-wrap">
+              <img src="images/proj1.png" alt="Sales Management System — class diagram and console" loading="lazy" width="600" height="338" onerror="this.style.display='none'" />
+            </div>
+            <div class="project-body">
+              <h3>Sales Management System</h3>
+              <p>A Java console app for managing inventory, customers, and transactions. Built with generics (<code>InventoryHandler&lt;T&gt;</code>), Template Method pattern, and full CRUD operations.</p>
+              <div class="project-tags" aria-label="Technologies used">
+                <span class="tag">Java</span>
+                <span class="tag">OOP</span>
+                <span class="tag">Design Patterns</span>
+              </div>
+              <a href="https://github.com/" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card reveal-card" data-delay="100" data-tags="web" aria-label="Portfolio website project">
+            <div class="project-img-wrap">
+              <img src="images/proj2.png" alt="Portfolio site — desktop and mobile views" loading="lazy" width="600" height="338" onerror="this.style.display='none'" />
+            </div>
+            <div class="project-body">
+              <h3>Developer Portfolio</h3>
+              <p>This site. Responsive across three breakpoints, with a JS carousel, filter system, sticky footer, and form validation. No frameworks — pure HTML, CSS, and JavaScript.</p>
+              <div class="project-tags" aria-label="Technologies used">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <a href="#" class="project-link" aria-label="You're already here">You're here →</a>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card reveal-card" data-delay="200" data-tags="java systems" aria-label="Minecraft Quest Plugin project">
+            <div class="project-img-wrap">
+              <img src="images/proj3.png" alt="Minecraft quest plugin — YAML config and in-game view" loading="lazy" width="600" height="338" onerror="this.style.display='none'" />
+            </div>
+            <div class="project-body">
+              <h3>Minecraft Quest Plugin</h3>
+              <p>A Spigot/Java plugin with a daily quest system, dynamic slot tracking, waypoint navigation, and complex YAML-driven BetonQuest 3.0 configuration for a Minecraft server.</p>
+              <div class="project-tags" aria-label="Technologies used">
+                <span class="tag">Java</span>
+                <span class="tag">Spigot API</span>
+                <span class="tag">YAML</span>
+              </div>
+              <a href="https://github.com/" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card reveal-card" data-delay="300" data-tags="systems" aria-label="CCNA Network Lab project">
+            <div class="project-img-wrap">
+              <img src="images/proj4.png" alt="CCNA lab — Packet Tracer topology and router config" loading="lazy" width="600" height="338" onerror="this.style.display='none'" />
+            </div>
+            <div class="project-body">
+              <h3>CCNA Network Labs</h3>
+              <p>Cisco Packet Tracer labs covering VLSM subnetting, static routing, SSH hardening, and full router/switch CLI configuration across real-world-style topologies.</p>
+              <div class="project-tags" aria-label="Technologies used">
+                <span class="tag">Cisco IOS</span>
+                <span class="tag">VLSM</span>
+                <span class="tag">Networking</span>
+              </div>
+              <a href="https://github.com/" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+            </div>
+          </article>
+
+        </div><!-- /projects-grid -->
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         CONTACT
+    ══════════════════════════════════ -->
+    <section id="contact" class="contact section reveal" aria-labelledby="contact-heading">
+      <div class="section-inner contact-inner">
+        <div class="contact-info">
+          <p class="section-eyebrow">Say hello</p>
+          <h2 id="contact-heading">Let's connect</h2>
+          <p>Whether it's a project, a question, or just wanting to talk code — I'm happy to hear from you.</p>
+          <ul class="contact-links" role="list">
+            <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">GitHub</a></li>
+            <li><a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">LinkedIn</a></li>
+            <li><a href="mailto:hi@student.edu.vn" aria-label="Send email">hi@student.edu.vn</a></li>
+          </ul>
+        </div>
+        <form class="contact-form" id="contact-form" novalidate aria-label="Contact form">
+          <div class="form-group">
+            <label for="f-name">Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="f-name" name="name" autocomplete="name" required aria-required="true" aria-describedby="err-name" placeholder="Your name" />
+            <span class="field-error" id="err-name" role="alert" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <label for="f-email">Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="f-email" name="email" autocomplete="email" required aria-required="true" aria-describedby="err-email" placeholder="you@example.com" />
+            <span class="field-error" id="err-email" role="alert" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <label for="f-subject">Subject</label>
+            <input type="text" id="f-subject" name="subject" placeholder="What's this about?" />
+          </div>
+          <div class="form-group">
+            <label for="f-message">Message <span aria-hidden="true">*</span></label>
+            <textarea id="f-message" name="message" rows="5" required aria-required="true" aria-describedby="err-message" placeholder="Your message..."></textarea>
+            <span class="field-error" id="err-message" role="alert" aria-live="polite"></span>
+          </div>
+          <button type="submit" class="btn btn-primary" id="submit-btn">Send message</button>
+          <div class="form-success" id="form-success" role="status" aria-live="polite" hidden>
+            ✓ Message sent! I'll get back to you soon.
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════
+       STICKY FOOTER — EXTRA 3
+  ══════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; <span id="year"></span> Luu Kiet · Built with HTML, CSS &amp; JS</p>
+      <nav aria-label="Footer navigation">
+        <ul class="footer-links" role="list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

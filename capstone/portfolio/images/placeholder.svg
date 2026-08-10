@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#162231"/>
+  <rect x="340" y="185" width="120" height="80" rx="8" fill="none" stroke="#8a9bb0" stroke-width="2"/>
+  <circle cx="370" cy="210" r="14" fill="none" stroke="#8a9bb0" stroke-width="2"/>
+  <polyline points="340,265 390,220 430,250 470,225 460,265" fill="none" stroke="#8a9bb0" stroke-width="2"/>
+  <text x="400" y="300" font-family="Space Grotesk,sans-serif" font-size="14" fill="#8a9bb0" text-anchor="middle">screenshot</text>
+</svg>
